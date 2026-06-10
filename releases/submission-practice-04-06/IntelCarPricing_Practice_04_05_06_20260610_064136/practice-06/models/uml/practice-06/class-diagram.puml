@@ -1,0 +1,25 @@
+@startuml
+skinparam classAttributeIconSize 0
+class Product { +productId: UUID +sku: String +name: String +category: String +brand: String }
+class SalesHistory { +period: Date +quantity: Integer +revenue: Decimal }
+class InventoryPosition { +availableQuantity: Integer +reservedQuantity: Integer }
+class MarketPrice { +source: String +competitor: String +price: Decimal +capturedAt: DateTime }
+class PricingRule { +minMargin: Decimal +maxDiscount: Decimal +priority: Integer }
+class DemandForecast { +expectedDemand: Decimal +elasticity: Decimal +confidence: Decimal }
+class PriceRecommendation { +recommendedPrice: Decimal +confidence: Decimal +status: RecommendationStatus }
+class Explanation { +mainFactors: String +marketPosition: String +riskComment: String }
+class ApprovalRequest { +status: ApprovalStatus +decisionComment: String +decidedAt: DateTime }
+class User { +fullName: String +role: String }
+class PricePublication { +publishedPrice: Decimal +publishedAt: DateTime +targetSystem: String }
+
+Product "1" -- "0..*" SalesHistory
+Product "1" -- "0..*" InventoryPosition
+Product "1" -- "0..*" MarketPrice
+Product "1" -- "0..*" PriceRecommendation
+PricingRule "1..*" -- "0..*" PriceRecommendation
+DemandForecast "1" -- "0..*" PriceRecommendation
+PriceRecommendation "1" -- "1" Explanation
+PriceRecommendation "1" -- "0..1" ApprovalRequest
+ApprovalRequest "1" -- "1" User
+PriceRecommendation "1" -- "0..1" PricePublication
+@enduml

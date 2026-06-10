@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+actor "Менеджер по ценообразованию" as PricingManager
+actor "Бизнес-эксперт" as BusinessExpert
+actor "Руководитель проекта" as ProjectManager
+actor "Система продаж" as SalesSystem
+actor "Каталог продукции" as ProductCatalog
+actor "Источник рыночных цен" as MarketSource
+
+rectangle "Система интеллектуального ценообразования" {
+  usecase "Загрузить продажи" as UC1
+  usecase "Загрузить каталог" as UC2
+  usecase "Получить рыночные цены" as UC3
+  usecase "Проверить качество данных" as UC4
+  usecase "Рассчитать рекомендованную цену" as UC5
+  usecase "Получить объяснение рекомендации" as UC6
+  usecase "Согласовать цену" as UC7
+  usecase "Опубликовать цену" as UC8
+  usecase "Сформировать отчёт" as UC9
+  usecase "Контролировать отклонения" as UC10
+}
+
+SalesSystem --> UC1
+ProductCatalog --> UC2
+MarketSource --> UC3
+PricingManager --> UC4
+PricingManager --> UC5
+PricingManager --> UC6
+BusinessExpert --> UC7
+PricingManager --> UC8
+ProjectManager --> UC9
+ProjectManager --> UC10
+
+UC5 .> UC4 : include
+UC5 .> UC3 : include
+UC6 .> UC5 : extend
+UC7 .> UC6 : include
+UC8 .> UC7 : include
+@enduml

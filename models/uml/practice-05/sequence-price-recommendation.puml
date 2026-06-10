@@ -1,0 +1,31 @@
+@startuml
+actor "Менеджер по ценообразованию" as Manager
+participant "Frontend" as UI
+participant "Pricing API" as API
+participant "Data Quality Service" as DQ
+database "Product and Sales DB" as DB
+participant "Market Adapter" as Market
+participant "ML Pricing Model" as Model
+participant "Explanation Service" as Explain
+participant "Approval Service" as Approval
+actor "Бизнес-эксперт" as Expert
+
+Manager -> UI : Запросить расчёт цены
+UI -> API : POST /price-recommendations
+API -> DQ : Проверить качество данных
+DQ -> DB : Получить продажи, остатки, каталог
+DB --> DQ : Исходные данные
+DQ --> API : Данные допустимы
+API -> Market : Получить рыночные цены
+Market --> API : Рыночные индикаторы
+API -> Model : Рассчитать рекомендованную цену
+Model --> API : Цена, доверие, факторы
+API -> Explain : Сформировать объяснение
+Explain --> API : Обоснование
+API -> Approval : Создать пакет согласования
+Approval -> Expert : Отправить на согласование
+Expert --> Approval : Утвердить цену
+Approval --> API : Статус утверждения
+API --> UI : Результат
+UI --> Manager : Показать цену
+@enduml
