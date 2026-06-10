@@ -28,100 +28,89 @@
 
 <!-- VISUAL_DASHBOARD_START -->
 
-## Visual Project Dashboard
+## Визуальная панель проекта
 
-Project: **Intelligent pricing for automotive products**
+Проект: **Интеллектуальное ценообразование на автомобильную продукцию**
 
-### Management loop
+### Управленческий контур
 
 ```mermaid
 flowchart LR
-    A["Assignments"] --> B["GitHub Issues"]
+    A["Практические задания"] --> B["GitHub Issues"]
     B --> C["GitHub Project"]
-    C --> D["Schedule planning"]
-    C --> E["Resource planning"]
-    C --> F["Execution control"]
-    D --> G["Baseline"]
-    E --> H["Resource leveling"]
-    F --> I["Actuals and variance"]
-    G --> J["Reports"]
+    C --> D["Планирование"]
+    C --> E["Ресурсы"]
+    C --> F["Контроль"]
+    D --> G["Базовый план"]
+    E --> H["Выравнивание ресурсов"]
+    F --> I["Фактическое выполнение и отклонения"]
+    G --> J["Отчёты"]
     H --> J
     I --> J
-    J --> K["Submission packages"]
-
-    classDef source fill:#e8f1ff,stroke:#2f6fab,stroke-width:1px;
-    classDef control fill:#fff4cc,stroke:#b58900,stroke-width:1px;
-    classDef output fill:#e6f4ea,stroke:#2e7d32,stroke-width:1px;
-
-    class A,B source;
-    class C,D,E,F,G,H,I control;
-    class J,K output;
+    J --> K["Пакеты сдачи"]
 ```
 
-### Practice roadmap
+### Дорожная карта
 
 ```mermaid
 flowchart TD
-    P01["Practice 01: problem statement, WBS, calendar"]
-    P021["Practice 02.1: dependencies, critical path, resources"]
-    P022["Practice 02.2: baseline, actuals, variance"]
-    P03["Practice 03: IDEF0 model"]
-    P04["Practice 04: IDEF decomposition"]
-    P05["Practice 05: UML Use Case and Sequence"]
-    P06["Practice 06: UML Class and Activity"]
-    P08["Practice 08: BPMN process 1"]
-    P09["Practice 09: BPMN process 2"]
-    P10["Practice 10: BPMN documentation"]
-    P11["Practice 11: AS IS / TO BE"]
-    P12["Practice 12: Risk management"]
+    P01["Практика 01: постановка задачи, WBS, календарь"]
+    P021["Практика 02.1: связи, критический путь, ресурсы"]
+    P022["Практика 02.2: базовый план, факт, отклонения"]
+    P03["Практика 03: IDEF0-модель"]
+    P04["Практика 04: IDEF0/IDEF3-декомпозиции"]
+    P05["Практика 05: UML Use Case и Sequence"]
+    P06["Практика 06: UML Class и Activity"]
+    P08["Практика 08: BPMN-процесс 1"]
+    P09["Практика 09: BPMN-процесс 2"]
+    P10["Практика 10: документирование BPMN"]
+    P11["Практика 11: КАК ЕСТЬ / КАК ДОЛЖНО БЫТЬ"]
+    P12["Практика 12: управление рисками"]
 
     P01 --> P021 --> P022 --> P03 --> P04 --> P05 --> P06 --> P08 --> P09 --> P10 --> P11 --> P12
-
-    classDef done fill:#e6f4ea,stroke:#2e7d32,stroke-width:1px;
-    classDef planned fill:#f5f5f5,stroke:#757575,stroke-width:1px;
-
-    class P01,P021,P022,P03 done;
-    class P04,P05,P06,P08,P09,P10,P11,P12 planned;
 ```
 
-### Repository structure
+### Структура репозитория
 
 ```mermaid
 flowchart TD
-    R["IntelCarPricing"]
-    R --> D["docs"]
-    R --> P["project"]
-    R --> M["models"]
-    R --> S["scripts"]
-    R --> Rel["releases"]
+    R["Репозиторий IntelCarPricing"]
+    R --> D["Документы"]
+    R --> P["Проектное планирование"]
+    R --> M["Модели"]
+    R --> S["Скрипты"]
+    R --> Rel["Пакеты сдачи"]
 
-    D --> Problem["problem-statement"]
-    D --> Planning["planning"]
-    D --> Reports["reports"]
-    D --> Visuals["visuals"]
+    D --> Problem["Постановка задачи"]
+    D --> Planning["Планирование"]
+    D --> Reports["Отчёты"]
+    D --> Visuals["Визуальный слой"]
 
-    P --> MSProject["msproject"]
-    P --> GitHubProject["github-project"]
+    P --> MSProject["MS Project / CSV / XML"]
+    P --> GitHubProject["GitHub Project"]
 
-    M --> IDEF["idef"]
-    M --> UML["uml"]
-    M --> BPMN["bpmn"]
-    M --> Visual["visual"]
+    M --> IDEF["IDEF-модели"]
+    M --> UML["UML-модели"]
+    M --> BPMN["BPMN-модели"]
+    M --> Visual["Визуальные схемы"]
 
-    Rel --> Sub0102["submission-practice-01-02"]
-    Rel --> Sub03["submission-practice-03"]
+    Rel --> Sub0102["Практики 01-02"]
+    Rel --> Sub03["Практика 03"]
+    Rel --> Sub04["Практика 04"]
+    Rel --> Sub05["Практика 05"]
+    Rel --> Sub06["Практика 06"]
 ```
 
-### IDEF0 context
+### IDEF0-контекст
 
 ```mermaid
 flowchart LR
-    I["Inputs: sales, catalog, stock, market, cost"] --> A["A-0: Manage intelligent pricing"]
-    C["Controls: policy, margin, strategy, approval rules"] --> A
-    M["Mechanisms: team, GitHub, data, infrastructure"] --> A
-    A --> O["Outputs: prices, reports, rationale, calculation log"]
+    I["Входы: продажи, каталог, остатки, рынок, себестоимость"] --> A["A-0: Управлять интеллектуальным ценообразованием"]
+    C["Управление: политика, маржинальность, стратегия, регламент"] --> A
+    M["Механизмы: команда, GitHub, данные"] --> A
+    A --> O["Выходы: цены, отчёты, обоснование, журнал расчётов"]
 ```
 
-Detailed dashboard: [`docs/visuals/project-dashboard.md`](docs/visuals/project-dashboard.md)
+Подробнее: [`docs/visuals/project-dashboard.md`](docs/visuals/project-dashboard.md)
 
 <!-- VISUAL_DASHBOARD_END -->
