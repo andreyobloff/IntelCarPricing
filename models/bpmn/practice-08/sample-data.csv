@@ -1,0 +1,4 @@
+request_id,product_id,current_price,cost_price,stock_qty,market_median_price,recommended_price,margin_percent,approval_required,calculation_version
+REQ-001,BRAKE-PAD-01,4200,2900,120,4500,4390,33.94,false,calc-2026-06-10-01
+REQ-002,OIL-FILTER-02,900,610,240,980,950,35.79,false,calc-2026-06-10-01
+REQ-003,BATTERY-75AH,11800,9100,35,12400,12150,25.10,true,calc-2026-06-10-01
