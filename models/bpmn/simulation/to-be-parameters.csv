@@ -1,0 +1,5 @@
+Parameter,Value,Unit,Comment
+AverageDataPreparationTime,6,hours,"Сокращение времени подготовки данных"
+ManualOperationsCount,5,count,"Снижение количества ручных операций"
+DataErrorProbability,0.08,probability,"Контроль качества данных"
+PriceApprovalTime,3,hours,"Ускоренное согласование цены"

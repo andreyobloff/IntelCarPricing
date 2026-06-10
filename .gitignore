@@ -1,0 +1,21 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Office temporary files
+~$*
+*.tmp
+*.temp
+*.bak
+
+# Logs
+*.log
+
+# Local IDE state
+.idea/
+.vscode/
+
+# Local environment files
+.env
+.env.*

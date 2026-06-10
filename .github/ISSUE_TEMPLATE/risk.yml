@@ -1,0 +1,46 @@
+name: Проектный риск
+description: Фиксация риска проекта IntelCarPricing
+title: "[risk] "
+labels:
+  - artifact:risk
+  - status:planned
+body:
+  - type: input
+    id: risk_id
+    attributes:
+      label: Risk ID
+      placeholder: R-XXX
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание риска
+    validations:
+      required: true
+  - type: dropdown
+    id: probability
+    attributes:
+      label: Вероятность
+      options:
+        - Низкая
+        - Средняя
+        - Высокая
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Влияние
+      options:
+        - Низкое
+        - Среднее
+        - Высокое
+    validations:
+      required: true
+  - type: textarea
+    id: response
+    attributes:
+      label: План реакции
+    validations:
+      required: true

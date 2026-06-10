@@ -1,0 +1,36 @@
+name: Практическая работа / артефакт
+description: Задача по практической работе дисциплины «Управление проектами»
+title: "[practice-XX] "
+labels:
+  - status:planned
+body:
+  - type: input
+    id: practice
+    attributes:
+      label: Практическая работа
+      description: Например, practice-01, practice-08, practice-12
+      placeholder: practice-XX
+    validations:
+      required: true
+  - type: input
+    id: deliverable
+    attributes:
+      label: Deliverable path
+      description: Путь к итоговому артефакту в репозитории
+      placeholder: docs/... или models/...
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Содержание работ
+      description: Что должно быть выполнено
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Критерии готовности
+      description: Как понять, что задача завершена
+    validations:
+      required: true

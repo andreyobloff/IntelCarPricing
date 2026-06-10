@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+
+actor "Руководитель проекта" as PM
+actor "Бизнес-эксперт" as BE
+actor "Data Scientist" as DS
+actor "Пользователь системы" as User
+
+rectangle "Система интеллектуального ценообразования" {
+  usecase "Загрузить данные о продукции" as UC1
+  usecase "Проверить качество данных" as UC2
+  usecase "Рассчитать рекомендованную цену" as UC3
+  usecase "Согласовать ценовую рекомендацию" as UC4
+  usecase "Сформировать отчёт" as UC5
+}
+
+PM --> UC5
+BE --> UC4
+DS --> UC1
+DS --> UC2
+User --> UC3
+User --> UC5
+@enduml

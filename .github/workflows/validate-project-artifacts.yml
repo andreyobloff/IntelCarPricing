@@ -1,0 +1,55 @@
+name: Validate project artifacts
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate required files
+        shell: pwsh
+        run: |
+          $required = @(
+            "README.md",
+            "PROJECT_CHARTER.md",
+            "CHANGELOG.md",
+            "docs/assignment-map.md",
+            "project/github-project/labels.md",
+            "project/github-project/milestones.md",
+            "project/github-project/fields.md",
+            "project/msproject/exports/tasks.csv",
+            "project/msproject/exports/resources.csv",
+            "project/msproject/exports/assignments.csv",
+            "docs/risk-management/risk-register.md"
+          )
+
+          $missing = @()
+
+          foreach ($file in $required) {
+            if (-not (Test-Path $file)) {
+              $missing += $file
+            }
+          }
+
+          if ($missing.Count -gt 0) {
+            Write-Error ("Missing required files: " + ($missing -join ", "))
+          }
+
+      - name: Validate assignment map is not empty
+        shell: pwsh
+        run: |
+          $content = Get-Content "docs/assignment-map.md" -Raw
+
+          if ([string]::IsNullOrWhiteSpace($content)) {
+            Write-Error "docs/assignment-map.md is empty"
+          }
+
+          if ($content -notmatch "Интеллектуальное ценообразование") {
+            Write-Error "assignment-map.md does not contain expected project topic"
+          }

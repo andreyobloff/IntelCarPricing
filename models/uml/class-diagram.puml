@@ -1,0 +1,36 @@
+@startuml
+class Product {
+  +id: string
+  +name: string
+  +category: string
+  +basePrice: decimal
+}
+
+class MarketSignal {
+  +competitorPrice: decimal
+  +demandIndex: decimal
+  +seasonalityIndex: decimal
+}
+
+class PricingModel {
+  +version: string
+  +calculateRecommendation(product, signals): PriceRecommendation
+}
+
+class PriceRecommendation {
+  +recommendedPrice: decimal
+  +confidence: decimal
+  +explanation: string
+}
+
+class ApprovalDecision {
+  +status: string
+  +comment: string
+}
+
+Product "1" --> "*" MarketSignal
+PricingModel --> Product
+PricingModel --> MarketSignal
+PricingModel --> PriceRecommendation
+PriceRecommendation --> ApprovalDecision
+@enduml

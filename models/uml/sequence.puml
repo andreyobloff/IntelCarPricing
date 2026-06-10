@@ -1,0 +1,16 @@
+@startuml
+actor "Пользователь" as User
+participant "Web/API интерфейс" as API
+participant "Pricing Service" as Service
+participant "ML-модель" as Model
+database "Хранилище данных" as DB
+
+User -> API: Запросить рекомендованную цену
+API -> Service: Передать параметры продукта
+Service -> DB: Получить данные о продукте и рынке
+DB --> Service: Данные
+Service -> Model: Рассчитать рекомендацию
+Model --> Service: Рекомендованная цена
+Service --> API: Результат расчёта
+API --> User: Показать рекомендацию
+@enduml
