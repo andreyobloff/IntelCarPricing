@@ -1,0 +1,11 @@
+Entity,Field,Type,Description
+ProductPriceRequest,request_id,string,Идентификатор запроса на пересчёт цены
+ProductPriceRequest,product_id,string,Идентификатор автомобильной продукции
+ProductPriceRequest,current_price,decimal,Текущая цена
+ProductPriceRequest,cost_price,decimal,Себестоимость
+ProductPriceRequest,stock_qty,integer,Остаток
+ProductPriceRequest,market_median_price,decimal,Медианная рыночная цена
+ProductPriceRequest,recommended_price,decimal,Рекомендованная цена
+ProductPriceRequest,margin_percent,decimal,Маржинальность
+ProductPriceRequest,approval_required,boolean,Признак необходимости согласования
+ProductPriceRequest,calculation_version,string,Версия расчёта
