@@ -1,0 +1,23 @@
+﻿?? docs/planning/calendar.md
+?? docs/planning/constraints.md
+?? docs/reports/practice-01-report.md
+?? docs/reports/practice-02-part-1-report.md
+?? docs/reports/practice-02-part-2-report.md
+?? docs/reports/practice-03-report.md
+?? docs/reports/project-management-reports/cash-flow.md
+?? docs/reports/project-management-reports/cost-overview.md
+?? docs/reports/project-management-reports/earned-value-report.md
+?? docs/reports/project-management-reports/project-overview.md
+?? docs/reports/project-management-reports/resource-cost-overview.md
+?? docs/reports/project-management-reports/task-cost-overview.md
+?? models/idef/practice-03/
+?? project/msproject/IntelCarPricing.xml
+?? project/msproject/exports/earned-value.csv
+?? project/msproject/exports/resource-usage.csv
+?? project/msproject/exports/task-usage.csv
+?? project/msproject/exports/variance.csv
+?? releases/submission-practice-01-02/
+?? releases/submission-practice-03/
+?? scripts/powershell/Export-Practice01-02Submission.ps1
+?? scripts/powershell/Setup-GitHubProjectAndWiki.ps1
+

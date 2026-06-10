@@ -1,0 +1,253 @@
+{
+    "project":  "IntelCarPricing",
+    "subject":  "Intelligent pricing for automotive products",
+    "notation":  "IDEF0",
+    "practice":  "practice-03",
+    "contextFunction":  "A-0 Управлять интеллектуальным ценообразованием автомобильной продукции",
+    "functions":  [
+                      {
+                          "Code":  "A-0",
+                          "Name":  "Управлять интеллектуальным ценообразованием автомобильной продукции",
+                          "Level":  "Context",
+                          "Parent":  "",
+                          "Owner":  "Руководитель проекта",
+                          "Output":  "Рекомендованные цены и отчёты"
+                      },
+                      {
+                          "Code":  "A1",
+                          "Name":  "Собирать и нормализовать данные",
+                          "Level":  "A0",
+                          "Parent":  "A0",
+                          "Owner":  "Системный аналитик",
+                          "Output":  "Подготовленный набор данных"
+                      },
+                      {
+                          "Code":  "A2",
+                          "Name":  "Анализировать рынок и прогнозировать спрос",
+                          "Level":  "A0",
+                          "Parent":  "A0",
+                          "Owner":  "Data Scientist",
+                          "Output":  "Рыночные индикаторы и прогноз спроса"
+                      },
+                      {
+                          "Code":  "A3",
+                          "Name":  "Рассчитывать рекомендованные цены",
+                          "Level":  "A0",
+                          "Parent":  "A0",
+                          "Owner":  "Data Scientist",
+                          "Output":  "Предварительные рекомендованные цены"
+                      },
+                      {
+                          "Code":  "A4",
+                          "Name":  "Согласовывать и публиковать цены",
+                          "Level":  "A0",
+                          "Parent":  "A0",
+                          "Owner":  "Бизнес-эксперт",
+                          "Output":  "Утверждённые цены"
+                      },
+                      {
+                          "Code":  "A5",
+                          "Name":  "Контролировать результат и обновлять модель",
+                          "Level":  "A0",
+                          "Parent":  "A0",
+                          "Owner":  "Руководитель проекта",
+                          "Output":  "Журнал расчётов и управленческие отчёты"
+                      },
+                      {
+                          "Code":  "A21",
+                          "Name":  "Сопоставить товары с рыночными аналогами",
+                          "Level":  "A2",
+                          "Parent":  "A2",
+                          "Owner":  "Системный аналитик",
+                          "Output":  "Сопоставленные товарные позиции"
+                      },
+                      {
+                          "Code":  "A22",
+                          "Name":  "Рассчитать рыночные индикаторы",
+                          "Level":  "A2",
+                          "Parent":  "A2",
+                          "Owner":  "Data Scientist",
+                          "Output":  "Рыночные индикаторы"
+                      },
+                      {
+                          "Code":  "A23",
+                          "Name":  "Оценить спрос и эластичность",
+                          "Level":  "A2",
+                          "Parent":  "A2",
+                          "Owner":  "Data Scientist",
+                          "Output":  "Оценка спроса"
+                      },
+                      {
+                          "Code":  "A24",
+                          "Name":  "Выявить аномалии данных",
+                          "Level":  "A2",
+                          "Parent":  "A2",
+                          "Owner":  "Data Scientist",
+                          "Output":  "Очищенный аналитический набор"
+                      },
+                      {
+                          "Code":  "A25",
+                          "Name":  "Подготовить аналитический набор признаков",
+                          "Level":  "A2",
+                          "Parent":  "A2",
+                          "Owner":  "Data Scientist",
+                          "Output":  "Признаки для расчёта цены"
+                      }
+                  ],
+    "arrows":  [
+                   {
+                       "Code":  "I1",
+                       "Type":  "Input",
+                       "Name":  "История продаж",
+                       "Source":  "Data sources",
+                       "Target":  "A-0/A1/A23"
+                   },
+                   {
+                       "Code":  "I2",
+                       "Type":  "Input",
+                       "Name":  "Каталог автомобильной продукции",
+                       "Source":  "Product catalog",
+                       "Target":  "A-0/A1"
+                   },
+                   {
+                       "Code":  "I3",
+                       "Type":  "Input",
+                       "Name":  "Остатки и доступность товаров",
+                       "Source":  "Inventory",
+                       "Target":  "A-0/A1"
+                   },
+                   {
+                       "Code":  "I4",
+                       "Type":  "Input",
+                       "Name":  "Рыночные и конкурентные цены",
+                       "Source":  "Market data",
+                       "Target":  "A-0/A2"
+                   },
+                   {
+                       "Code":  "I5",
+                       "Type":  "Input",
+                       "Name":  "Себестоимость и закупочные цены",
+                       "Source":  "Accounting data",
+                       "Target":  "A-0/A3"
+                   },
+                   {
+                       "Code":  "C1",
+                       "Type":  "Control",
+                       "Name":  "Ценовая политика компании",
+                       "Source":  "Management",
+                       "Target":  "A-0/A3"
+                   },
+                   {
+                       "Code":  "C2",
+                       "Type":  "Control",
+                       "Name":  "Ограничения маржинальности",
+                       "Source":  "Finance",
+                       "Target":  "A-0/A3"
+                   },
+                   {
+                       "Code":  "C3",
+                       "Type":  "Control",
+                       "Name":  "Коммерческая стратегия",
+                       "Source":  "Business owner",
+                       "Target":  "A-0/A4"
+                   },
+                   {
+                       "Code":  "C4",
+                       "Type":  "Control",
+                       "Name":  "Требования к качеству данных",
+                       "Source":  "Project standards",
+                       "Target":  "A-0/A1/A24"
+                   },
+                   {
+                       "Code":  "C5",
+                       "Type":  "Control",
+                       "Name":  "Регламент согласования цен",
+                       "Source":  "Management",
+                       "Target":  "A-0/A4"
+                   },
+                   {
+                       "Code":  "O1",
+                       "Type":  "Output",
+                       "Name":  "Рекомендованные цены",
+                       "Source":  "A3",
+                       "Target":  "Business process"
+                   },
+                   {
+                       "Code":  "O2",
+                       "Type":  "Output",
+                       "Name":  "Отчёт об изменении цен",
+                       "Source":  "A4",
+                       "Target":  "Management"
+                   },
+                   {
+                       "Code":  "O3",
+                       "Type":  "Output",
+                       "Name":  "Обоснование ценовых решений",
+                       "Source":  "A4",
+                       "Target":  "Business expert"
+                   },
+                   {
+                       "Code":  "O4",
+                       "Type":  "Output",
+                       "Name":  "Журнал расчётов и версий модели",
+                       "Source":  "A5",
+                       "Target":  "Git repository"
+                   },
+                   {
+                       "Code":  "O5",
+                       "Type":  "Output",
+                       "Name":  "Управленческие отчёты",
+                       "Source":  "A5",
+                       "Target":  "Project stakeholders"
+                   },
+                   {
+                       "Code":  "M1",
+                       "Type":  "Mechanism",
+                       "Name":  "Руководитель проекта",
+                       "Source":  "Project team",
+                       "Target":  "A-0/A5"
+                   },
+                   {
+                       "Code":  "M2",
+                       "Type":  "Mechanism",
+                       "Name":  "Системный аналитик",
+                       "Source":  "Project team",
+                       "Target":  "A1/A21"
+                   },
+                   {
+                       "Code":  "M3",
+                       "Type":  "Mechanism",
+                       "Name":  "Data Scientist",
+                       "Source":  "Project team",
+                       "Target":  "A2/A3"
+                   },
+                   {
+                       "Code":  "M4",
+                       "Type":  "Mechanism",
+                       "Name":  "Backend-разработчик",
+                       "Source":  "Project team",
+                       "Target":  "A3"
+                   },
+                   {
+                       "Code":  "M5",
+                       "Type":  "Mechanism",
+                       "Name":  "Бизнес-эксперт",
+                       "Source":  "Project team",
+                       "Target":  "A4/A21"
+                   },
+                   {
+                       "Code":  "M6",
+                       "Type":  "Mechanism",
+                       "Name":  "Репозиторий GitHub",
+                       "Source":  "Infrastructure",
+                       "Target":  "A5"
+                   },
+                   {
+                       "Code":  "M7",
+                       "Type":  "Mechanism",
+                       "Name":  "Данные о ценах и продуктах",
+                       "Source":  "Data storage",
+                       "Target":  "A-0"
+                   }
+               ]
+}
