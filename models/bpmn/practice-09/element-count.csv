@@ -1,0 +1,8 @@
+ElementType,Count,Comment
+Lane,3,Три дорожки
+StartEvent,1,Старт процесса
+EndEvent,2,Два завершения
+Task,7,Операции процесса
+ExclusiveGateway,2,Развилки принятия решения
+SubProcess,1,Публикация цены
+DataStore,1,Реестр цен
