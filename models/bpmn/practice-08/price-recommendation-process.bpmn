@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_Practice08" targetNamespace="https://github.com/andreyobloff/IntelCarPricing/models/bpmn/practice-08">
+  <process id="Process_PriceRecommendation" name="Формирование рекомендованной цены автомобильной продукции" isExecutable="false">
+    <laneSet id="LaneSet_Practice08">
+      <lane id="Lane_Commercial" name="Коммерческий отдел">
+        <flowNodeRef>Task_RequestReprice</flowNodeRef>
+        <flowNodeRef>Task_CheckBusinessRules</flowNodeRef>
+        <flowNodeRef>Gateway_ApprovalRequired</flowNodeRef>
+        <flowNodeRef>Task_ApprovePrice</flowNodeRef>
+      </lane>
+      <lane id="Lane_PricingSystem" name="Система интеллектуального ценообразования">
+        <flowNodeRef>Task_LoadData</flowNodeRef>
+        <flowNodeRef>Task_NormalizeData</flowNodeRef>
+        <flowNodeRef>SubProcess_MarketIndicators</flowNodeRef>
+        <flowNodeRef>Task_CalculatePrice</flowNodeRef>
+        <flowNodeRef>Gateway_MarginOk</flowNodeRef>
+        <flowNodeRef>Task_PrepareRationale</flowNodeRef>
+      </lane>
+      <lane id="Lane_Analyst" name="Data Scientist / аналитик">
+        <flowNodeRef>Task_CheckAnomalies</flowNodeRef>
+        <flowNodeRef>Task_RegisterVersion</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="StartEvent_RepriceRequired" name="Требуется пересчёт цены" />
+    <task id="Task_RequestReprice" name="Сформировать запрос на пересчёт цены" />
+    <task id="Task_LoadData" name="Загрузить продажи, каталог, остатки" />
+    <dataStoreReference id="DataStore_PricingData" name="Хранилище ценовых данных" />
+    <task id="Task_NormalizeData" name="Нормализовать и проверить данные" />
+    <subProcess id="SubProcess_MarketIndicators" name="Расчёт рыночных индикаторов" />
+    <task id="Task_CalculatePrice" name="Рассчитать рекомендованную цену" />
+    <exclusiveGateway id="Gateway_MarginOk" name="Маржинальность допустима?" />
+    <task id="Task_CheckAnomalies" name="Проверить аномалии модели" />
+    <task id="Task_PrepareRationale" name="Сформировать обоснование цены" />
+    <task id="Task_CheckBusinessRules" name="Проверить бизнес-ограничения" />
+    <exclusiveGateway id="Gateway_ApprovalRequired" name="Цена требует согласования?" />
+    <task id="Task_ApprovePrice" name="Утвердить рекомендованную цену" />
+    <task id="Task_RegisterVersion" name="Зарегистрировать версию расчёта" />
+    <endEvent id="EndEvent_PriceReady" name="Цена готова к публикации" />
+    <endEvent id="EndEvent_ManualCorrection" name="Требуется ручная корректировка" />
+  </process>
+</definitions>
