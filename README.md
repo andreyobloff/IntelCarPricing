@@ -4,6 +4,17 @@
 **Дисциплина:** Управление проектами  
 **Автор:** Облов Андрей Андреевич, СИИ-23, 3 курс, РАНХиГС ЭМИТ
 
+## Меню демонстрации проекта
+
+| Раздел | Ссылка | Назначение |
+|---|---|---|
+| Единая презентация | [`docs/presentation/final-project-presentation.md`](docs/presentation/final-project-presentation.md) | Последовательный показ проекта от постановки задачи до BPMN и отчётов |
+| Меню презентации | [`docs/presentation/presentation-menu.md`](docs/presentation/presentation-menu.md) | Навигация по демонстрации |
+| Сценарий защиты | [`docs/presentation/demo-script.md`](docs/presentation/demo-script.md) | Краткая речь и порядок показа преподавателю |
+| Индекс артефактов | [`docs/presentation/artifact-index.csv`](docs/presentation/artifact-index.csv) | Проверяемые пути к ключевым результатам |
+| Визуальная панель | [`docs/visuals/project-dashboard.md`](docs/visuals/project-dashboard.md) | Схемы управления, дорожная карта и структура проекта |
+| Карта заданий | [`docs/assignment-map.md`](docs/assignment-map.md) | Связь практических заданий и Git-артефактов |
+
 ## Назначение репозитория
 
 Репозиторий используется как Git-ориентированная среда управления учебным проектом.
