@@ -1,29 +1,29 @@
-# Visual layer
+# Визуальный слой проекта
 
-## Purpose
+## Назначение
 
-This folder contains visual project-management views for IntelCarPricing.
+Раздел содержит визуальные представления проекта **«Интеллектуальное ценообразование на автомобильную продукцию»**.
 
-The visual layer shows:
+Визуальный слой показывает:
 
-- project-management logic;
-- traceability between assignments and artifacts;
-- repository structure;
-- IDEF0 functional model context;
-- baseline, actuals, variance and reporting control loop.
+- управленческую логику проекта;
+- трассировку между практическими заданиями и артефактами;
+- структуру репозитория;
+- контекст функциональной модели IDEF0;
+- контроль базового плана, фактического выполнения, отклонений и отчётности.
 
-## Files
+## Файлы
 
-| File | Purpose |
+| Файл | Назначение |
 |---|---|
-| project-dashboard.md | Main dashboard |
-| visual-style-guide.md | Diagram style rules |
-| models/visual/project-structure.mmd | Repository structure |
-| models/visual/practice-roadmap.mmd | Practice roadmap |
-| models/visual/artifact-traceability.mmd | Assignment-to-artifact traceability |
-| models/visual/project-control-loop.mmd | Project control loop |
-| models/visual/idef0-context-compact.mmd | Compact IDEF0 context |
+| `project-dashboard.md` | Главная визуальная панель проекта |
+| `visual-style-guide.md` | Правила оформления диаграмм |
+| `models/visual/project-structure.mmd` | Структура репозитория |
+| `models/visual/practice-roadmap.mmd` | Дорожная карта практических работ |
+| `models/visual/artifact-traceability.mmd` | Трассировка заданий и артефактов |
+| `models/visual/project-control-loop.mmd` | Контур управления проектом |
+| `models/visual/idef0-context-compact.mmd` | Компактный IDEF0-контекст |
 
-## Rule
+## Правило
 
-All diagrams are stored as code. This enables versioning, review and rendering directly in GitHub.
+Все диаграммы хранятся как код. Это обеспечивает версионирование, проверку и отображение прямо в GitHub.
