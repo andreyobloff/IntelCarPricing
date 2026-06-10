@@ -1,29 +1,29 @@
-# Visual style guide
+# Правила визуального оформления
 
-## Diagram rules
+## Правила диаграмм
 
-1. Use short block names.
-2. Keep one management meaning per diagram.
-3. Use repository paths when an artifact is referenced.
-4. Prefer Mermaid diagrams for GitHub rendering.
-5. Do not store exported images without source diagrams.
+1. Использовать короткие и понятные названия блоков.
+2. Закладывать один управленческий смысл на одну диаграмму.
+3. Указывать пути в репозитории, если диаграмма ссылается на артефакт.
+4. Использовать Mermaid для отображения диаграмм прямо в GitHub.
+5. Не хранить экспортированные изображения без исходных diagram-as-code файлов.
 
-## Color logic
+## Цветовая логика
 
-| Element type | Meaning |
+| Тип элемента | Значение |
 |---|---|
-| Blue | Plans and input documents |
-| Green | Completed deliverables |
-| Yellow | Control points, baseline, actuals |
-| Red | Risks and corrective actions |
-| Gray | Infrastructure and repository layer |
+| Синий | Планы и входные документы |
+| Зелёный | Завершённые результаты |
+| Жёлтый | Контрольные точки, базовый план, фактическое выполнение |
+| Красный | Риски и корректирующие действия |
+| Серый | Инфраструктура и слой репозитория |
 
-## Traceability rule
+## Правило трассировки
 
-Every diagram must answer at least one question:
+Каждая диаграмма должна отвечать минимум на один вопрос:
 
-- what is created;
-- where it is stored;
-- which practice it supports;
-- which control metric it closes;
-- which dependency or risk it clarifies.
+- что создаётся;
+- где хранится результат;
+- какую практическую работу поддерживает;
+- какой контрольный показатель закрывает;
+- какую зависимость или риск поясняет.
