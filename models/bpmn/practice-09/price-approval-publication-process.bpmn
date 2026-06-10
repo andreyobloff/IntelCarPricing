@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_Practice09" targetNamespace="https://github.com/andreyobloff/IntelCarPricing/models/bpmn/practice-09">
+  <process id="Process_PriceApprovalPublication" name="Согласование и публикация цены автомобильной продукции" isExecutable="false">
+    <laneSet id="LaneSet_Practice09">
+      <lane id="Lane_BusinessExpert" name="Бизнес-эксперт" />
+      <lane id="Lane_CommercialLead" name="Коммерческий руководитель" />
+      <lane id="Lane_PublicationSystem" name="Система публикации цен" />
+    </laneSet>
+    <startEvent id="StartEvent_RecommendedPriceReady" name="Рекомендованная цена готова" />
+    <task id="Task_CheckRationale" name="Проверить обоснование цены" />
+    <exclusiveGateway id="Gateway_RationaleEnough" name="Обоснование достаточно?" />
+    <task id="Task_CheckCommercialEffect" name="Проверить влияние на маржу и продажи" />
+    <exclusiveGateway id="Gateway_RiskAcceptable" name="Коммерческий риск приемлем?" />
+    <task id="Task_ApprovePrice" name="Согласовать цену" />
+    <task id="Task_ReturnForRework" name="Вернуть на доработку" />
+    <task id="Task_ApprovePublication" name="Утвердить публикацию" />
+    <dataStoreReference id="DataStore_ApprovedPrices" name="Реестр утверждённых цен" />
+    <subProcess id="SubProcess_PublishPrice" name="Публикация цены в целевых каналах" />
+    <task id="Task_RegisterPublicationDate" name="Зафиксировать дату публикации" />
+    <task id="Task_CreatePublicationReport" name="Сформировать отчёт о публикации" />
+    <endEvent id="EndEvent_Published" name="Цена опубликована" />
+    <endEvent id="EndEvent_Rework" name="Цена возвращена на доработку" />
+  </process>
+</definitions>
