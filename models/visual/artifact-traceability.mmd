@@ -1,0 +1,15 @@
+flowchart TD
+    Assign["docs/assignment-map.md"] --> Issues["GitHub Issues"]
+    Issues --> Project["GitHub Project"]
+    Project --> P01["Practice 01 artifacts"]
+    Project --> P02["Practice 02 artifacts"]
+    Project --> P03["Practice 03 artifacts"]
+
+    P01 --> R01["docs/reports/practice-01-report.md"]
+    P02 --> R021["docs/reports/practice-02-part-1-report.md"]
+    P02 --> R022["docs/reports/practice-02-part-2-report.md"]
+    P03 --> R03["docs/reports/practice-03-report.md"]
+
+    P01 --> ZIP01["submission-practice-01-02.zip"]
+    P02 --> ZIP01
+    P03 --> ZIP03["submission-practice-03.zip"]

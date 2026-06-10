@@ -1,0 +1,8 @@
+flowchart LR
+    Plan["Plan"] --> Baseline["Baseline"]
+    Baseline --> Execute["Execute"]
+    Execute --> Actuals["Actuals"]
+    Actuals --> Variance["Variance"]
+    Variance --> Reports["Reports"]
+    Reports --> Decisions["Management decisions"]
+    Decisions --> Plan

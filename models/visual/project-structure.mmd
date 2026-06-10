@@ -1,0 +1,22 @@
+flowchart TD
+    R["IntelCarPricing"]
+    R --> D["docs"]
+    R --> P["project"]
+    R --> M["models"]
+    R --> Rel["releases"]
+
+    D --> Problem["problem-statement"]
+    D --> Planning["planning"]
+    D --> Reports["reports"]
+    D --> Visuals["visuals"]
+
+    P --> MSProject["msproject"]
+    P --> GitHubProject["github-project"]
+
+    M --> IDEF["idef"]
+    M --> UML["uml"]
+    M --> BPMN["bpmn"]
+    M --> Visual["visual"]
+
+    Rel --> Practice0102["submission-practice-01-02"]
+    Rel --> Practice03["submission-practice-03"]
