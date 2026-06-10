@@ -1,0 +1,18 @@
+Practice,ArtifactType,Path,Purpose
+01,report,docs/reports/practice-01-report.md,Отчёт по постановке задачи и первичному планированию
+02-1,report,docs/reports/practice-02-part-1-report.md,Связи задач критический путь и ресурсы
+02-2,report,docs/reports/practice-02-part-2-report.md,Базовый план фактические данные и отклонения
+03,model,models/idef/practice-03/idef0-functional-model.md,Функциональная модель IDEF0
+04,model,models/idef/practice-04/A3-idef3-price-recommendation.mmd,IDEF3 декомпозиция формирования цены
+04,model,models/idef/practice-04/A4-idef0-approval-decomposition.mmd,IDEF0 декомпозиция согласования цены
+05,model,models/uml/practice-05/use-case-diagram.puml,UML диаграмма вариантов использования
+05,model,models/uml/practice-05/sequence-price-recommendation.puml,UML диаграмма последовательности
+06,model,models/uml/practice-06/class-diagram.puml,UML диаграмма классов
+06,model,models/uml/practice-06/activity-price-approval.puml,UML диаграмма деятельности
+08,model,models/bpmn/practice-08/price-recommendation-process.mmd,BPMN процесс формирования рекомендованной цены
+08,report,docs/reports/practice-08-report.md,Отчёт по практике 08
+09,model,models/bpmn/practice-09/price-approval-publication-process.mmd,BPMN процесс согласования и публикации цены
+09,report,docs/reports/practice-09-report.md,Отчёт по практике 09
+10,report,docs/reports/practice-10-business-process-report.md,Документирование BPMN процесса
+10,table,docs/reports/practice-10-business-process-documentation.csv,Сводная таблица документирования BPMN
+all,presentation,docs/presentation/final-project-presentation.md,Единая презентация проекта
