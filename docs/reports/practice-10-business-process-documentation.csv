@@ -1,0 +1,9 @@
+Section,Element,Description,RepositoryPath
+Process,Name,Документируемый BPMN процесс,models/bpmn/practice-08/price-recommendation-process.mmd
+Lane,Commercial,Коммерческий отдел,models/bpmn/practice-08/process-documentation.md
+Lane,System,Система интеллектуального ценообразования,models/bpmn/practice-08/process-documentation.md
+Lane,Analyst,Data Scientist и аналитик,models/bpmn/practice-08/process-documentation.md
+Data,Structure,Структура данных,models/bpmn/practice-08/data-structure.csv
+Data,Sample,Пример данных,models/bpmn/practice-08/sample-data.csv
+Validation,ElementCount,Подсчёт элементов,models/bpmn/practice-08/element-count.csv
+Validation,Report,Отчёт о валидации,models/bpmn/practice-08/validation-report.md
