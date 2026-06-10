@@ -1,25 +1,25 @@
-# Project Dashboard
+# Визуальная панель проекта
 
-## Project
+## Проект
 
-**Intelligent pricing for automotive products**
+**Интеллектуальное ценообразование на автомобильную продукцию**
 
-## Management scheme
+## Управленческий контур
 
 ```mermaid
 flowchart LR
-    A["Assignments"] --> B["GitHub Issues"]
+    A["Практические задания"] --> B["GitHub Issues"]
     B --> C["GitHub Project"]
-    C --> D["Schedule planning"]
-    C --> E["Resource planning"]
-    C --> F["Execution control"]
-    D --> G["Baseline"]
-    E --> H["Resource leveling"]
-    F --> I["Actuals and variance"]
-    G --> J["Reports"]
+    C --> D["Планирование сроков"]
+    C --> E["Планирование ресурсов"]
+    C --> F["Контроль исполнения"]
+    D --> G["Базовый план"]
+    E --> H["Выравнивание ресурсов"]
+    F --> I["Фактическое выполнение и отклонения"]
+    G --> J["Отчёты"]
     H --> J
     I --> J
-    J --> K["Submission ZIP"]
+    J --> K["ZIP-пакеты для сдачи"]
 
     classDef source fill:#e8f1ff,stroke:#2f6fab,stroke-width:1px;
     classDef control fill:#fff4cc,stroke:#b58900,stroke-width:1px;
@@ -31,22 +31,22 @@ flowchart LR
     class J,K output;
 ```
 
-## Practice roadmap
+## Дорожная карта практических работ
 
 ```mermaid
 flowchart TD
-    P01["Practice 01: problem statement, WBS, calendar, resources"]
-    P021["Practice 02.1: dependencies, critical path, resource leveling"]
-    P022["Practice 02.2: baseline, actuals, variance, reports"]
-    P03["Practice 03: IDEF0 functional model"]
-    P04["Practice 04: IDEF decomposition"]
-    P05["Practice 05: UML Use Case and Sequence"]
-    P06["Practice 06: UML Class and Activity"]
-    P08["Practice 08: BPMN process 1"]
-    P09["Practice 09: BPMN process 2"]
-    P10["Practice 10: BPMN documentation"]
-    P11["Practice 11: AS IS / TO BE simulation"]
-    P12["Practice 12: risk management"]
+    P01["Практика 01: постановка задачи, WBS, календарь, ресурсы"]
+    P021["Практика 02.1: связи, критический путь, ресурсное выравнивание"]
+    P022["Практика 02.2: базовый план, фактическое выполнение, отклонения"]
+    P03["Практика 03: функциональная модель IDEF0"]
+    P04["Практика 04: декомпозиционные IDEF0/IDEF3 диаграммы"]
+    P05["Практика 05: UML Use Case и Sequence"]
+    P06["Практика 06: UML Class и Activity"]
+    P08["Практика 08: BPMN-процесс 1"]
+    P09["Практика 09: BPMN-процесс 2"]
+    P10["Практика 10: документирование BPMN"]
+    P11["Практика 11: сценарии КАК ЕСТЬ / КАК ДОЛЖНО БЫТЬ"]
+    P12["Практика 12: управление рисками"]
 
     P01 --> P021 --> P022 --> P03 --> P04 --> P05 --> P06 --> P08 --> P09 --> P10 --> P11 --> P12
 
@@ -56,32 +56,35 @@ flowchart TD
     class P04,P05,P06,P08,P09,P10,P11,P12 planned;
 ```
 
-## Artifact structure
+## Структура артефактов
 
 ```mermaid
 flowchart TD
-    R["IntelCarPricing Repository"]
-    R --> D["docs"]
-    R --> P["project"]
-    R --> M["models"]
-    R --> S["scripts"]
-    R --> Rel["releases"]
+    R["Репозиторий IntelCarPricing"]
+    R --> D["Документы"]
+    R --> P["Проектное планирование"]
+    R --> M["Модели"]
+    R --> S["Скрипты"]
+    R --> Rel["Пакеты сдачи"]
 
-    D --> PS["problem-statement"]
-    D --> PL["planning"]
-    D --> Rep["reports"]
-    D --> Vis["visuals"]
+    D --> PS["Постановка задачи"]
+    D --> PL["Планирование"]
+    D --> Rep["Отчёты"]
+    D --> Vis["Визуальный слой"]
 
-    P --> MSP["msproject"]
-    P --> GHP["github-project"]
+    P --> MSP["MS Project / CSV / XML"]
+    P --> GHP["GitHub Project"]
 
-    M --> IDEF["idef"]
-    M --> UML["uml"]
-    M --> BPMN["bpmn"]
-    M --> Visual["visual"]
+    M --> IDEF["IDEF-модели"]
+    M --> UML["UML-модели"]
+    M --> BPMN["BPMN-модели"]
+    M --> Visual["Визуальные схемы"]
 
-    Rel --> Sub01["submission-practice-01-02"]
-    Rel --> Sub03["submission-practice-03"]
+    Rel --> Sub01["Практики 01-02"]
+    Rel --> Sub03["Практика 03"]
+    Rel --> Sub04["Практика 04"]
+    Rel --> Sub05["Практика 05"]
+    Rel --> Sub06["Практика 06"]
 
     classDef repo fill:#eeeeee,stroke:#555555,stroke-width:1px;
     classDef docs fill:#e8f1ff,stroke:#2f6fab,stroke-width:1px;
@@ -91,17 +94,17 @@ flowchart TD
     class R repo;
     class D,P,S,Vis docs;
     class M,IDEF,UML,BPMN,Visual models;
-    class Rel,Sub01,Sub03 release;
+    class Rel,Sub01,Sub03,Sub04,Sub05,Sub06 release;
 ```
 
-## IDEF0 project context
+## IDEF0-контекст проекта
 
 ```mermaid
 flowchart LR
-    I["Inputs: sales, catalog, stock, market, cost"] --> A["A-0: Manage intelligent pricing"]
-    C["Controls: pricing policy, margin, strategy, approval rules"] --> A
-    M["Mechanisms: project team, GitHub, data, infrastructure"] --> A
-    A --> O["Outputs: recommended prices, reports, rationale, calculation log"]
+    I["Входы: продажи, каталог, остатки, рынок, себестоимость"] --> A["A-0: Управлять интеллектуальным ценообразованием"]
+    C["Управление: ценовая политика, маржинальность, стратегия, регламент согласования"] --> A
+    M["Механизмы: проектная команда, GitHub, данные, инфраструктура"] --> A
+    A --> O["Выходы: рекомендованные цены, отчёты, обоснование, журнал расчётов"]
 
     classDef input fill:#e8f1ff,stroke:#2f6fab,stroke-width:1px;
     classDef control fill:#fff4cc,stroke:#b58900,stroke-width:1px;
@@ -116,20 +119,20 @@ flowchart LR
     class A function;
 ```
 
-## Baseline and actuals control
+## Контроль базового плана и фактического выполнения
 
 ```mermaid
 flowchart LR
-    Plan["Planned tasks"] --> Base["Baseline"]
-    Base --> Actual["Actuals"]
-    Actual --> Var["Variance"]
-    Var --> EV["Earned Value"]
-    EV --> Reports["Reports"]
-    Reports --> Decision["Management decisions"]
+    Plan["Плановые задачи"] --> Base["Базовый план"]
+    Base --> Actual["Фактическое выполнение"]
+    Actual --> Var["Отклонения"]
+    Var --> EV["Освоенный объём"]
+    EV --> Reports["Отчёты"]
+    Reports --> Decision["Управленческие решения"]
 
-    Var --> Check1{"Variance acceptable?"}
-    Check1 -- Yes --> Decision
-    Check1 -- No --> Risk["Corrective action"]
+    Var --> Check1{"Отклонения допустимы?"}
+    Check1 -- "Да" --> Decision
+    Check1 -- "Нет" --> Risk["Корректирующее действие"]
 
     classDef plan fill:#e8f1ff,stroke:#2f6fab,stroke-width:1px;
     classDef control fill:#fff4cc,stroke:#b58900,stroke-width:1px;
@@ -142,13 +145,13 @@ flowchart LR
     class Risk risk;
 ```
 
-## Completion state
+## Состояние готовности
 
-| Block | Status |
+| Блок | Статус |
 |---|---|
-| Practice 01 | Done |
-| Practice 02 part 1 | Done |
-| Practice 02 part 2 | Done |
-| Practice 03 | Done |
-| Visual dashboard | Added |
-| README visualization | Added |
+| Практика 01 | Готово |
+| Практика 02, часть 1 | Готово |
+| Практика 02, часть 2 | Готово |
+| Практика 03 | Готово |
+| Визуальная панель в README | Переведена на русский |
+| Визуальная панель проекта | Переведена на русский |
